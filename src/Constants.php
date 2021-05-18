@@ -250,6 +250,7 @@ class ErrorCodeId
     const C_INVALIDDATERANGEERROR = 81;
     const C_RULEMUSTHAVETAXCODE = 82;
     const C_RULETYPERESTRICTED = 83;
+    const C_ALLJURISRULELIMITS = 84;
     const C_INVALIDCOMPANYLOCATIONSETTING = 85;
     const C_INVALIDADJUSTMENTTYPE = 99;
     const C_DELETEINFORMATION = 100;
@@ -290,6 +291,7 @@ class ErrorCodeId
     const C_COUNTRYOVERRIDESNOTAVAILABLE = 153;
     const C_JURISDICTIONOVERRIDEMISMATCH = 154;
     const C_DUPLICATESYSTEMTAXCODE = 155;
+    const C_SSTOVERRIDESNOTAVAILABLE = 156;
     const C_NEXUSDATEMISMATCH = 157;
     const C_NEXUSPARENTDATEMISMATCH = 159;
     const C_BEARERTOKENPARSEUSERIDERROR = 160;
@@ -505,12 +507,14 @@ class ErrorCodeId
     const C_FIELDLENGTHERROR = 2400;
     const C_INPUTCONTAINSBLACKLISTEDCHARACTERS = 2401;
     const C_CANNOTCREATENESTEDOBJECTS = 2402;
+    const C_USERSUBJECTIDNOTUPDATED = 2500;
     const C_BATCHTRANSACTIONTYPEERROR = 2501;
     const C_BATCHTRANSACTIONLINELIMITEXCEEDED = 2502;
     const C_BATCHCOMPANYIDANDCOMPANYCODEMISMATCH = 2503;
     const C_BATCHCANNOTBECANCELLEDSTATUSERROR = 2504;
     const C_BATCHCANNOTBECANCELLEDFORMATERROR = 2505;
     const C_INVALIDPARAMETERDATATYPE = 2600;
+    const C_CANNOTDOWNLOADREPORT = 2700;
 
 }
 
@@ -644,6 +648,7 @@ class MatchingTaxType
     const C_MEALS = 77;
     const C_VATNONRECOVERABLEINPUTTAX = 78;
     const C_VATOUTPUTTAX = 79;
+    const C_PIF = 80;
     const C_RENTAL = 82;
     const C_SALESTAX = 83;
     const C_USETAX = 85;
@@ -685,6 +690,10 @@ class TaxRuleTypeId
     const C_EXEMPTENTITYRULE = 3;
     const C_PRODUCTTAXABILITYRULE = 4;
     const C_NEXUSRULE = 5;
+    const C_RATECAPRULE = 6;
+    const C_TAXOVERRIDERULE = 7;
+    const C_FEERULE = 8;
+    const C_OTHERRULE = 100;
 
 }
 
@@ -845,6 +854,16 @@ class TaxOverrideType
     const C_ACCRUEDTAXAMOUNT = 4;
     const C_DERIVETAXABLE = 5;
     const C_OUTOFHARBOR = 6;
+    const C_TAXAMOUNTBYTAXTYPE = 7;
+
+}
+
+/**
+ * 
+ */
+class MarketplaceLiabilityType
+{    const C_MARKETPLACE = 1;
+    const C_SELLER = 2;
 
 }
 
@@ -929,12 +948,13 @@ class CertCaptureProvisionStatus
  * 
  */
 class CompanyFilingStatus
-{    const C_NOREPORTING = 0;
+{    const C_NOTCONFIGUREDFORCOMPLIANCE = 0;
     const C_NOTYETFILING = 1;
     const C_FILINGREQUESTED = 2;
     const C_FIRSTFILING = 3;
     const C_ACTIVE = 4;
-    const C_NOTCONFIGUREDFORCOMPLIANCE = 5;
+    const C_NOREPORTING = 5;
+    const C_INACTIVE = 6;
 
 }
 
@@ -944,6 +964,15 @@ class CompanyFilingStatus
 class LiabilityType
 {    const C_SELLER = 0;
     const C_BUYERSAGENT = 1;
+
+}
+
+/**
+ * 
+ */
+class DeemedSellerType
+{    const C_MARKETPLACE = 1;
+    const C_MERCHANT = 2;
 
 }
 
