@@ -54,7 +54,7 @@ class AvaTaxClientBase
      *
      * @throws \Exception
      */
-    public function __construct($appName, $appVersion, $machineName="", $environment, $guzzleParams = [])
+    public function __construct($appName, $appVersion, $environment, $machineName="", $guzzleParams = [])
     {
         // app name and app version are mandatory fields.
         if ($appName == "" || $appName == null || $appVersion == "" || $appVersion == null) {
@@ -179,7 +179,7 @@ class AvaTaxClientBase
         }
         // timeout for 1200s (20 min)
         $guzzleParams['timeout'] = 1200;
-        
+
         // Contact the server
         try {
             $response = $this->client->request($verb, $apiUrl, $guzzleParams);
